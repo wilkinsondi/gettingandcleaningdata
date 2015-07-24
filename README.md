@@ -10,11 +10,12 @@ Function steps
 4. Aggregates all test data, eg variables, subjects and activities into a single data set.
 5. Aggregates all training data, eg variables, subjects and activities into a single data set.
 6. Combines all training with all testing data.
-7. Removes all variables that are not mean or standard deviation calculations.
-8. Changes the activity values to named activities, eg WALKING, SITTING, etc.
-9. Renames the Subject & Activity columns, and for brevity, leaves the other column variables with the original names which are explained below.
-10. Groups the data by individual (subject) and activity to give mean values.
-11. Outputs the results into a tidy summary file, saved as a .txt file that writes into the working directory.
+7. Removes "BodyBody" values that are not referenced in the experiment. 
+8. Removes all variables that are not mean or standard deviation calculations.
+9. Changes the activity values to named activities, eg WALKING, SITTING, etc.
+10. Renames the columns and adds description.
+11. Groups the data by individual (subject) and activity to give mean values.
+12. Outputs the results into a tidy summary file, saved as a .txt file that writes into the working directory.
 
 
 Code Book 
@@ -58,14 +59,12 @@ The set of variables that are included from these signals are:
 mean(): Mean value
 std(): Standard deviation
 
-PLEASE NOTE: additional variables that are not mentioned in the original feature descriptions have been included for completeness:
+PLEASE NOTE: additional variables that are not mentioned in the original feature descriptions (UCI HAR Dataset/features_info.txt)  have been removed:
 fBodyBodyAccJerkMag
 fBodyBodyGyroMag
 fBodyBodyGyroJerkMag
 
-These have been included for completeness, despite not being referenced in the authors original feature sets.
-UCI HAR Dataset/features_info.txt
-
 The file tidy.txt is a grouped summary (by subject (30) and by activity (6 types). It gives the mean value for each variable for the particular grouping (180 in total).
- 
+
+The variable names have been expanded into full form descriptive names in the tidy.txt file.
 
